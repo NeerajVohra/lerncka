@@ -68,5 +68,4 @@ ass.
 | No Scalability | Scalability is Hard | **Easily Scalable** |
 | Huge Resource Wastage | Better Resource Usage but Dynamic Allocation is NOT Possible | **Dynamic Resource Allocation is
  Possible** |
-| Takes Longer Time to Initialize App (boot time) | Almost Same as Physical  | **Take Very Less Time to Initialize App (l
-ess boot time)** |
+| Takes Longer Time to Initialize App (boot time) | Almost Same as Physical  | **Take Very Less Time to Initialize App (less boot time)** |
