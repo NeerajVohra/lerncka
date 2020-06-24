@@ -1,0 +1,137 @@
+Day1
+======
+	Evolution of IT
+	Why Containers ? What are Containers ?
+	Intro to Docker
+	Install Docker 
+	Docker Architecture
+	Work with Docker Containers
+	Docker HUB
+
+Day2
+======
+	Docker Images
+	  Build images
+	why Container Orchestration
+	Docker Swarm 
+	  create Docker Swarm cluster
+	  deploy services
+	  deploy stacks
+
+Day3
+======
+	Introduction to Kubernetes & History
+	Docker Swarm Vs Kubernetes
+	Install Kubernetes 
+		kubeadm,kubelet,kubectl
+	bootstrap cluster with kubeadm
+		configure kubectl
+		configure Container Network
+	Kubernetes Architecture
+		Master Components
+		Node Components
+	Intro to Yaml
+	kubernetes namespaces
+	Kubernetes PODS
+		single container pods
+
+
+Day4
+======
+	kubernetes PODS
+		multi container pods
+		init container pods
+		static pods
+		
+	kubernetes controllers
+		replicasets
+		deployments
+		rolling updates & rollbacks
+
+	understand labels & selectors
+
+	kuberntes services
+		clusterip
+		nodeport
+
+Day5
+======
+	kubernetes controllers 
+		daemonsets
+		jobs
+		cronjobs
+	scheduling 
+		nodename
+		nodeselector
+		taints & tolerations
+	multi schedular
+
+
+Day6
+======
+	storage
+		volumes
+		persistant volumes
+		persistant volume claims
+		configmaps
+		secrets
+
+Day7
+======
+	Kubernetes Networking
+		networking basics
+		cluster networking
+		CNI
+		how pods communicate in single host
+		how pods communicate across cluster
+		
+	DNS in kubernetes 
+		coredns 
+		pod dns & its name resolutions
+		service dns & its name resoultions
+
+	Ingress
+
+Day8
+======
+	Security 
+		SSL/TLS Basics
+		understand kubeconfig file
+			kubectl config get-contexts
+			kubectl config use-context <contextname>
+		API Server authentication using x509 certs
+		API Server authorization
+			roles
+			rolebindings
+			clusterroles
+			clusterrole bindings
+		
+Day9
+======
+	Deploy Kubernetes dashboard
+
+	API Server authentication with Service Account
+	API Server authorizaton with service account
+	
+	Network Policies
+	
+	resouce limits 
+		namespaces
+		pods
+
+	self healing applications 
+		readiness probes
+		liveness probes
+
+
+Day10
+======
+	backup cluster (etcd operations)
+
+	Monitoring
+		configure kubernetes metrics server
+		kubectl top commands
+		
+	configure horizontal pod autoscalar (HPA)
+
+	troubleshooting issues
