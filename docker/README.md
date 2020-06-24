@@ -1,3 +1,13 @@
+## What is Docker ?
+
+> **Docker is a Containerization Platform which allows us to containerize an application/software (called as Docker Image) & also lets you run Containerized application/software**
+
+> **Technical Deffinition:**
+
+> Docker is an open source software platform to create, deploy and manage virtualized application containers on a common operating system (OS), with an ecosystem of allied tools.
+
+> Docker is a set of platform as a service products that use OS-level virtualization to deliver software in packages called containers.
+
 ## Docker Architecture 
 
 ### `Docker Engine`
@@ -20,21 +30,6 @@
 At this point, the daemon knows what it must do. It will look up the redis image on the host registry. If it’s not present, a new lookup will be made, this time against the configured image registry (Docker Hub, ECR, ACR, GCR, …) and pulled (downloaded). Then it will spawn a container based in the downloaded image.
 
 ![Docker Architecture](https://github.com/lerndevops/slearncka/blob/master/static/Docker-architecture.png)
-
-
-## What is Docker ?
-
-> **Docker is a Containerization Platform which allows us to containerize an application/software (called as Docker Image
-) &
-> also lets you run Containerized application/software**
-
-> **Technical Deffinition:**
-
-> Docker is an open source software platform to create, deploy and manage virtualized application containers
-> on a common operating system (OS), with an ecosystem of allied tools.
-
-> Docker is a set of platform as a service products that use OS-level virtualization
-> to deliver software in packages called containers.
 
 
 ## what is Docker Image ?
