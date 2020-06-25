@@ -1,0 +1,90 @@
+#TOKEN=$(kubectl -n kube-system describe secret $(kubectl -n kube-system get secret | awk '/^cluster-readonly-sa-token-/{print $1}') | grep token: | awk '{print $2}')
+#echo $TOKEN
+---
+kind: ServiceAccount
+apiVersion: v1
+metadata:
+  name: cluster-readonly-sa 
+  namespace: kube-system
+
+---
+kind: ClusterRole
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: cluster-readonly-role
+rules:
+rules:
+- apiGroups:
+  - "*"
+  resources:
+   - nodes
+   - bindings
+   - configmaps
+   - endpoints 
+   - events  
+   - limitranges
+   - namespaces/status           
+   - namespaces
+   - persistentvolumes
+   - persistentvolumeclaims/status     
+   - persistentvolumeclaims      
+   - pods/log
+   - pods/status
+   - pods    
+   - replicationcontrollers/scale
+   - replicationcontrollers/status     
+   - replicationcontrollers      
+   - resourcequotas/status       
+   - resourcequotas 
+   - serviceaccounts
+   - services/status
+   - services
+   - controllerrevisions.apps    
+   - daemonsets/status      
+   - daemonsets
+   - deployments/scale      
+   - deployments/status     
+   - deployments
+   - replicasets/scale      
+   - replicasets/status     
+   - replicasets
+   - statefulsets/scale     
+   - statefulsets/status    
+   - statefulsets           
+   - horizontalpodautoscalers.autoscaling/status
+   - horizontalpodautoscalers.autoscaling   
+   - cronjobs/status       
+   - cronjobs 
+   - jobs/status           
+   - jobs
+   - ingresses/status 
+   - ingresses        
+   - networkpolicies  
+   - clusterroles
+   - roles
+   - rolebinding
+   - clusterrolebindings
+  verbs:
+   #- describe
+   - get
+   - list
+   - watch
+    #- apiGroups: ["*"] # "*" indicates all API groups 
+    # resources: ["pods","services", "nodes", "namespaces", "deployments"]
+    #verbs: ["get", "watch", "list"]
+  #verbs: ["get", "list", "watch", "create", "update", "patch", "delete"]
+
+---
+kind: ClusterRoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+# This role binding allows "testuser" to read pods in the "kube-system" namespace.
+metadata:
+  name: cluster-readonly-binding
+subjects:
+- kind: ServiceAccount
+  name: cluster-readonly-sa # Name is case sensitive
+  namespace: kube-system
+roleRef:
+  kind: ClusterRole #this must be Role or ClusterRole
+  name: cluster-readonly-role # this must match the name of the Role or ClusterRole you wish to bind to
+  apiGroup: rbac.authorization.k8s.io

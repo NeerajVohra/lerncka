@@ -1,0 +1,60 @@
+#TOKEN=$(kubectl -n prod describe secret $(kubectl -n prod get secret | awk '/^readonly-prod-ns-sa-token-/{print $1}') | grep token: | awk '{print $2}')
+#echo $TOKEN
+---
+kind: ServiceAccount
+apiVersion: v1
+metadata:
+  name: readonly-prod-ns-sa 
+  namespace: prod 
+
+---
+kind: Role
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: readonly-prod-ns
+  namespace: prod
+rules:
+rules:
+- apiGroups:
+  - "*"
+  resources:
+  - configmaps
+  - cronjobs
+  - daemonsets
+  - deployments
+  - events
+  - ingresses
+  - jobs
+  - persistentvolumeclaims
+  - persistentvolumes
+  - pods
+  - pods/log
+  - replicasets
+  - replicationcontrollers
+  - services
+  - statefulsets
+  verbs:
+  - describe
+  - get
+  - list
+  - watch
+    #- apiGroups: ["*"] # "*" indicates all API groups 
+    # resources: ["pods","services", "nodes", "namespaces", "deployments"]
+    #verbs: ["get", "watch", "list"]
+  #verbs: ["get", "list", "watch", "create", "update", "patch", "delete"]
+
+---
+kind: RoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+# This role binding allows "testuser" to read pods in the "kube-system" namespace.
+metadata:
+  name: readonly-prod-ns-binding
+  namespace: prod
+subjects:
+- kind: ServiceAccount
+  name: readonly-prod-ns-sa # Name is case sensitive
+  namespace: prod
+roleRef:
+  kind: Role #this must be Role or ClusterRole
+  name: readonly-prod-ns # this must match the name of the Role or ClusterRole you wish to bind to
+  apiGroup: rbac.authorization.k8s.io
