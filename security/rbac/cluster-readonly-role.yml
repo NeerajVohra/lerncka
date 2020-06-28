@@ -4,6 +4,6 @@ metadata:
   name: cluster-readonly-role
 rules:
 - apiGroups: ["*"] # "" indicates the core API group
-  resources: ["pods","services", "persistentvolumes", "nodes" "deployments", "replicasets"]
+  resources: ["pods","services", "persistentvolumes", "nodes", "namespaces", "deployments", "replicasets"]
   verbs: ["get", "watch", "list", "describe"]
   #verbs: ["get", "list", "watch", "create", "update", "patch", "delete"]
