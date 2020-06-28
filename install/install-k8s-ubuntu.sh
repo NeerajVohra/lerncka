@@ -24,10 +24,10 @@ echo " "
 apt-cache madison docker-ce | awk '{print $3}'
 echo " "
 #read -p 'Enter Required Version: ' version
-version="5:18.09.8~3-0~ubuntu-bionic"
-sudo apt-get install -y docker-ce=$version docker-ce-cli=$version containerd.io --allow-downgrades
+#version="5:18.09.8~3-0~ubuntu-bionic"
+sudo apt-get install -y docker-ce docker-ce-cli containerd.io --allow-downgrades
 if [ $? -eq 0 ];then
-     echo "docker-ce-$version is successfully installed"
+     echo "docker-ce is successfully installed"
 else
      echo "issue with docker-ce installation - process abort"
      exit 1
