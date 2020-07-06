@@ -3,7 +3,7 @@
 ```
 ## Create a deployment with a record (for rollbacks):
 
-	kubectl create -f deployment-ex3.yml --record
+	kubectl create -f deployment-ex2.yml --record
 
 ## Check the status of the rollout:
 
@@ -30,7 +30,7 @@
 
 ## Use kubectl apply to update a deployment:
 
-	kubectl apply -f deployment-ex3.yml --record
+	kubectl apply -f deployment-ex2.yml --record
 	  
 ## validate: deployment to see the updated image
 
@@ -42,7 +42,7 @@
 ## Step3: Now, edit the version of image back to ‘v1’ in yml file & apply
 
 ```
-   kubectl apply -f deployment-ex3.yml --record
+   kubectl apply -f deployment-ex2.yml --record
    
    cotinue to watch the application output node 
 ```
