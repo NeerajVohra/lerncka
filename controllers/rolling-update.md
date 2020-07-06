@@ -34,7 +34,7 @@
 	  
 ## validate: deployment to see the updated image
 
-	kubectl roullout status deploy kubeserve
+	kubectl rollout status deploy kubeserve
 	kubectl get deploy kubeserve -o wide 
       
 ```
