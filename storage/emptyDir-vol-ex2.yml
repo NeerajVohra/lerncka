@@ -6,7 +6,7 @@ spec:
   containers:
   - image: centos
     imagePullPolicy: IfNotPresent
-    name: myvolumes-container-1
+    name: cont1 
     command: ['sh', '-c', 'echo The Bench Container 1 is Running ; sleep 3600']
     volumeMounts:
     - mountPath: /demo1
@@ -14,7 +14,7 @@ spec:
 
   - image: ubuntu  
     imagePullPolicy: IfNotPresent
-    name: myvolumes-container-2
+    name: cont2
     command: ['/bin/bash', '-c', 'echo The Bench Container 2 is Running ; sleep 3600']
     volumeMounts:
     - mountPath: /demo2
@@ -22,7 +22,7 @@ spec:
 
   - image: alpine
     imagePullPolicy: IfNotPresent
-    name: myvolumes-container-3
+    name: cont3
     command: ['sh', '-c', 'echo The Bench Container 3 is Running ; sleep 3600']    
     volumeMounts:
     - mountPath: /demo3

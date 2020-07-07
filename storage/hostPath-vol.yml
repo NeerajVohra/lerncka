@@ -9,7 +9,7 @@ spec:
      command: ['sh', '-c', 'sleep 3600']
      volumeMounts:
       - name: hostpath-volume
-        mountPath: /test
+        mountPath: /tmp/test
   volumes:
    - name: hostpath-volume
      hostPath:

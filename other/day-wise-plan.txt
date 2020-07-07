@@ -67,7 +67,7 @@ Day5
 	multi schedular
 
 
-Day6
+Day7
 ======
 	storage
 		volumes
@@ -76,7 +76,9 @@ Day6
 		configmaps
 		secrets
 
-Day7
+	Ingress
+	
+Day8
 ======
 	Kubernetes Networking
 		networking basics
@@ -88,13 +90,17 @@ Day7
 	DNS in kubernetes 
 		coredns 
 		pod dns & its name resolutions
-		service dns & its name resoultions
+		service dns & its name resoultions	
+		
+	Network Policies
+	
+	resouce limits 
+		namespaces
+		pods
 
-	Ingress
-
-Day8
+Day9
 ======
-	Security 
+	Security
 		SSL/TLS Basics
 		understand kubeconfig file
 			kubectl config get-contexts
@@ -105,28 +111,19 @@ Day8
 			rolebindings
 			clusterroles
 			clusterrole bindings
-		
-Day9
-======
+
 	Deploy Kubernetes dashboard
 
 	API Server authentication with Service Account
-	API Server authorizaton with service account
-	
-	Network Policies
-	
-	resouce limits 
-		namespaces
-		pods
-
-	self healing applications 
-		readiness probes
-		liveness probes
-
+	API Server authorizaton with service Account
 
 Day10
 ======
 	backup cluster (etcd operations)
+	
+	self healing applications 
+		readiness probes
+		liveness probes
 
 	Monitoring
 		configure kubernetes metrics server
