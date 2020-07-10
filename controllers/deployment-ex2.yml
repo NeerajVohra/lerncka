@@ -3,8 +3,8 @@ kind: Deployment
 metadata:
   name: kubeserve
 spec:
-  replicas: 8
-  minReadySeconds: 20 # wait for 10 sec before pod is ready going to next
+  replicas: 4 
+  minReadySeconds: 10 # wait for 10 sec before pod is ready going to next
   strategy:
     type: RollingUpdate
     rollingUpdate:
@@ -20,7 +20,7 @@ spec:
         app: kubeserve
     spec:
       containers:
-      - image: leaddevops/kubeserve:v1
+      - image: leaddevops/kubeserve:v3
         name: app
 
 ---
