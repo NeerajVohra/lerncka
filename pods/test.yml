@@ -1,0 +1,28 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: mypod1
+  labels:
+    app: web
+spec:
+  containers:
+    - name: cont1
+      image: nginx
+      ports:
+        - containerPort: 80
+
+---
+
+kind: Pod
+apiVersion: v1
+metadata:
+  name: mypod2
+  labels:
+    app: web
+spec:
+  containers:
+    - name: cont1
+      image: tomcat
+      ports:
+        - containerPort: 80
+
